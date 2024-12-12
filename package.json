@@ -7,15 +7,17 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint .",
+    "convert-readme": "marked -i task-3.md -o task-3.html",
     "format": "prettier --write .",
     "format-check": "prettier --check .",
-    "start": "npm run lint && npm run format-check && node index.js"
+    "start": "npm run lint && npm run format-check && node index.js && npm run convert-readme"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "chalk": "^5.3.0",
     "eslint": "^9.16.0",
+    "marked": "^15.0.3",
     "prettier": "^3.4.2"
   }
 }
