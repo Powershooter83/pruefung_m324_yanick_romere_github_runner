@@ -1,1 +1,1 @@
-# pruefung_m324_yanick_romere
+# Prüfung M324
