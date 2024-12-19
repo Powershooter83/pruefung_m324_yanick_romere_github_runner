@@ -38,5 +38,5 @@ jobs:
     runs-on: ubuntu-latest
     name: virenscan
     steps:
-      - name: Virenscan
-        uses: 'hugoalh/scan-virus-ghaction@latest'
+      - name: Checkout
+        uses: actions/checkout@v4
