@@ -1,7 +1,7 @@
 # ict-m324 - Programmieraufgabe 2
 
 ## Git, GitHub, Release, Automatisierung
-## Das ist der Test #1
+## Das ist der Test #2
 
 Git ist eine Software, mit der Sie Änderungen an einem Projekt im Laufe der Zeit verfolgen können.
 Ein DevOps Engineer nutzt Git täglich für die Arbeit an Code, Infrastruktur und Deployment-Prozessen, wodurch es eines
