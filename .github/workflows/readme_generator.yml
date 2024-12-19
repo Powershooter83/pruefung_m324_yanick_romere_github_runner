@@ -1,31 +1,42 @@
-name: Html Generator
-run-name: Generate html file from readme
-on: [ push ]
+name: Github Action
+
+on:
+  pull_request:
+    branches:
+      - main
+
 jobs:
-  Create-Page:
+  linter:
     runs-on: ubuntu-latest
     steps:
-
-      - name: Check out repository
+      - name: Checkout code
         uses: actions/checkout@v4
 
       - name: Set up Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
-          node-version: '16'
+          node-version: '18.x'
 
       - name: Install dependencies
         run: npm install
 
-      - name: Convert my readme
-        run: npm run convert-readme
+      - name: Run linter
+        run: npm run lint
+  comment_pr:
+    runs-on: ubuntu-latest
+    name: comment
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
 
-      - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v5
+      - name: Comment PR
+        uses: thollander/actions-comment-pull-request@v3
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          commit-message: "Update task-3.html from README.md"
-          branch: update-index-html
-          title: "Update task-3.html from README.md"
-          body: "This PR updates the index.html file generated from the README.md"
-          base: main
+          message: |
+            Uii hallo
+  virus-scan:
+    runs-on: ubuntu-latest
+    name: virenscan
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
