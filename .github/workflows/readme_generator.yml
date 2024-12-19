@@ -34,3 +34,9 @@ jobs:
         with:
           message: |
             Uii hallo
+  virus-scan:
+    runs on: ubuntu-latest
+    name: virenscan
+    steps:
+      - name: Virenscan
+        uses: 'hugoalh/scan-virus-ghaction@latest'
