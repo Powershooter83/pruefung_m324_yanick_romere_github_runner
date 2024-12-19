@@ -24,9 +24,9 @@ jobs:
         uses: peter-evans/create-pull-request@v5
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          commit-message: "Update index.html from README.md"
+          commit-message: "Update task-3.html from README.md"
           branch: update-index-html
-          title: "Update index.html from README.md"
+          title: "Update task-3.html from README.md"
           body: "This PR updates the index.html file generated from the README.md"
           base: main
-          path: 'index.html'
+          path: 'task-3.html'
