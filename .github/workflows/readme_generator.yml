@@ -1,0 +1,32 @@
+name: Html Generator
+run-name: Generate html file from readme
+on: [ push ]
+jobs:
+  Create-Page:
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Convert my readme
+        run: npm run convert-readme
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v5
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: "Update index.html from README.md"
+          branch: update-index-html
+          title: "Update index.html from README.md"
+          body: "This PR updates the index.html file generated from the README.md"
+          base: main
+          path: 'index.html'
