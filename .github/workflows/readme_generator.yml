@@ -29,4 +29,3 @@ jobs:
           title: "Update task-3.html from README.md"
           body: "This PR updates the index.html file generated from the README.md"
           base: main
-          path: 'task-3.html'
